@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kalpa De Silva Portfolio - About Me</title>
+    <meta name="description" content="Portfolio of an undergraduate student at SLIIT showcasing projects, skills and contact information." />
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Animation CSS (add inside your styles.css also if needed) -->
+    <style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="home.html">Kalpa De Silva</a>
+
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle color theme">🌙</button>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="sr-only">Toggle navigation</span>
+            ☰
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="AboutMe.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="skill.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="container about fade-in-up">
+        <h2>About Me</h2>
+
+        <p>
+            I am a dedicated and motivated software engineering student with a strong academic background and a GPA of 3.1. 
+            My interest in technology began early and has grown into a passion for problem-solving, logical thinking, and 
+            building meaningful digital solutions.
+        </p>
+
+        <p>
+            I completed my GCE Advanced Level examination in 2020 at Kalutara Vidyalaya (National School), 
+            following the Combined Mathematics stream. My subject results include:
+            <br><strong>ICT – C Pass</strong>,
+            <strong>Combined Mathematics – S Pass</strong>,
+            <strong>Physics – S Pass</strong>,
+            <strong>English – C Pass</strong>.
+        </p>
+
+        <p>
+            My academic journey has strengthened my analytical and technical abilities. Coursework highlights include 
+            <strong>Data Structures & Algorithms, Databases, Operating Systems, Software Engineering, and Web Technologies</strong>, 
+            providing me with solid knowledge in foundational and system-level computing concepts.
+        </p>
+
+        <p>
+            I am passionate about continuous learning and improving my skills in software development. I enjoy exploring 
+            new tools, technologies, and concepts while constantly working on personal and academic projects to grow both 
+            technically and professionally.
+        </p>
+    </section>
+
+    <!-- LANGUAGE PROFICIENCY -->
+    <section class="container fade-in-up">
+        <h3>Language Proficiency</h3>
+        <ul>
+            <li><strong>Sinhala</strong> – Fluent</li>
+            <li><strong>English</strong> – Professional Working Proficiency</li>
+            <li><strong>German</strong> – Basic</li>
+        </ul>
+    </section>
+
+    <!-- EXTRA CURRICULAR ACTIVITIES -->
+    <section class="container fade-in-up">
+        <h3>Extra-Curricular Activities</h3>
+
+        <p>
+            In 2019, I participated in <strong>ROBOFEST</strong>, where I built a Robot Car as part of the competition. 
+            This experience enhanced my creativity, teamwork, practical robotics skills, and passion for engineering.
+        </p>
+    </section>
+
+</main>
+
+<!-- Scroll Animation Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-in-up");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+});
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
