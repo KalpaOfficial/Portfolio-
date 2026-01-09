@@ -1,69 +1,1293 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Kalpa De Silva Portofolio</title>
-		<meta name="description" content="Portfolio of an undergraduate student at SLIIT showcasing projects, skills and contact information." />
-		<link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Kalpa De Silva Portfolio</title>
+    <meta name="description" content="Portfolio of an undergraduate student at SLIIT showcasing projects, skills and contact information." />
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #a10000;
+            --secondary-color: #ffb84d;
+            --accent-color: #4f46e5;
+            --text-color: #1a1a1a;
+            --text-light: #6b6b6b;
+            --bg-color: #ffffff;
+            --bg-secondary: #f9fafb;
+            --card-bg: #fff9f6;
+            --border-color: #e5e5e5;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+        }
 
-        
+        [data-theme="dark"] {
+            --primary-color: #ffb84d;
+            --secondary-color: #a10000;
+            --accent-color: #8b5cf6;
+            --text-color: #e6eef6;
+            --text-light: #9aa6b3;
+            --bg-color: #0b0d10;
+            --bg-secondary: #0f1418;
+            --card-bg: #0f1316;
+            --border-color: #374151;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
 
-	</head>
-	<body>
-        <div class="particles"></div>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-		<header class="site-header">
-			<div class="container header-inner">
-						<a class="brand" href="#">Kalpa De Silva</a>
-						<button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle color theme">🌙</button>
-						<button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-					<span class="sr-only">Toggle navigation</span>
-					☰
-				</button>
-				<nav id="site-nav" class="site-nav" aria-label="Main navigation">
-					<ul>
-						<li><a href="AboutMe.html">About</a></li>
-						<li><a href="project.html">Projects</a></li>
-						<li><a href="skill.html">Skills</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+        html {
+            scroll-behavior: smooth;
+        }
 
-		<main>
-			<section class="hero">
-				<div class="container hero-inner reveal stagger" data-stagger="90">
-					<div class="hero-text reveal-child" data-anim="up">
-						<h1>Hi, I'm Kalpa De Silva</h1>
-						<p class="lead">Undergraduate — BSc (Hons) in Information Technology
-							Specialising in Software Engineering (SLIIT). </p>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
 
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--bg-color);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .brand:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Navigation */
+        .site-nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .site-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .site-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .site-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        /* Mobile Navigation */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .hamburger {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .hamburger::before {
+            top: -6px;
+        }
+
+        .hamburger::after {
+            bottom: -6px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 8rem;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+		.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+        .hero-text h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            margin: 2rem 0;
+        }
+
+        .hero-description p {
+            margin-bottom: 1rem;
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+        }
+
+        .hero-info {
+            margin: 2rem 0;
+        }
+
+        .availability {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .available-icon {
+            color: #10b981;
+            font-size: 0.75rem;
+        }
+
+        .meta {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Hero Image */
+       .image-container {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-color);
+    transition: var(--transition);
+}
+
+.profile-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+        /* Buttons */
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn.primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn.primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn.secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn.secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .language-list, .activities-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .language-list li, .activities-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .language-list li::before,
+        .activities-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-thumb {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-body h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .project-desc {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-tech {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .icon-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .icon-link:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-left, .contact-right {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            text-decoration: none;
+            color: var(--text-color);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .social-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .social-card i {
+            font-size: 2rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            color: var(--text-color);
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Particles Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Animation Classes */
+        .fade-in-up, .slide-in-left {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .slide-in-left {
+            transform: translateX(-30px);
+        }
+
+        .visible {
+            opacity: 1 !important;
+            transform: translate(0) !important;
+        }
+@media (max-width: 1024px) {
+    .image-container {
+		align-items: center;
+		justify-content: center;
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* For mobile */
+@media (max-width: 768px) {
+    .image-container {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+/* For small mobile */
+@media (max-width: 480px) {
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
+}
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                gap: 3rem;
+            }
+			       
+            .image-placeholder {
+                width: 250px;
+                height: 250px;
+                font-size: 6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .site-nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-color);
+                box-shadow: var(--shadow);
+                padding: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            
+            .site-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .site-nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .site-nav li {
+                width: 100%;
+            }
+            
+            .site-nav a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .hero {
+                padding-top: 6rem;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-ctas {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .image-placeholder {
+                width: 200px;
+                height: 200px;
+                font-size: 5rem;
+                margin: 0 auto;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .lead {
+                font-size: 1.125rem;
+            }
+            
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            display: none;
+        }
+
+        .quick-nav.active {
+            display: block;
+        }
+
+        .quick-nav-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .quick-nav-btn:hover {
+            transform: scale(1.1);
+            background: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#home">Kalpa De Silva</a>
+            <div class="header-controls">
+                <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle color theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+            <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="fade-in-up">Hi, I'm <span>Kalpa De Silva</span></h1>
+                    <p class="lead fade-in-up">Undergraduate — BSc (Hons) in Information Technology
+                        Specialising in Software Engineering (SLIIT).</p>
+                    <div class="hero-description fade-in-up">
                         <p>I am a motivated software developer with hands-on experience in designing and developing web and mobile applications. I focus on clean 
-                            code, practical problem-solving, and building real-world systems such as booking platforms, management systems, and mobile apps. 
-                            My portfolio highlights the skills I’ve gained in front-end, back-end, and database development, as well as my eagerness to continuously learn and improve.</p>
-						<p class="meta">Available for internships · Open to collaborations</p>
-						<div class="hero-ctas">
-							<a class="btn primary reveal-child" href="project.html">View Projects</a>
-							<a class="btn reveal-child" href="contact.html">Contact Me</a>
-						</div>
-					</div>
-                  
-					
-				</div>
-			</section>
+                            code, practical problem-solving, and building real-world systems such as booking platforms, management systems, and mobile apps.</p>
+                        <p>My portfolio highlights the skills I've gained in front-end, back-end, and database development, as well as my eagerness to continuously learn and improve.</p>
+                    </div>
+                    <div class="hero-info fade-in-up">
+                        <div class="availability">
+                            <i class="fas fa-circle available-icon"></i>
+                            <span class="meta">Available for internships · Open to collaborations</span>
+                        </div>
+                    </div>
+                    <div class="hero-ctas">
+                        <a class="btn primary fade-in-up" href="#projects">
+                            <i class="fas fa-code"></i> View Projects
+                        </a>
+                        <a class="btn secondary fade-in-up" href="#contact">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+               <div class="hero-image fade-in-up">
+    <div class="image-container">
+        <img src="kalpa.jpeg" alt="Kalpa De Silva - Software Engineering Student" class="profile-photo">
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
 
-		
-			
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title slide-in-left">About Me</h2>
+            <div class="about-content">
+                <p class="fade-in-up">I am a dedicated and motivated software engineering student with a strong academic background and a GPA of 3.1. 
+                    My interest in technology began early and has grown into a passion for problem-solving, logical thinking, 
+                    and building meaningful digital solutions.</p>
 
-			
-			
-			
-		</main>
+                <p class="fade-in-up">I completed my GCE Advanced Level examination in 2020 at Kalutara Vidyalaya (National School), 
+                    following the Combined Mathematics stream. My subject results include:
+                    <br><strong>ICT – C Pass</strong>,
+                    <strong>Combined Mathematics – S Pass</strong>,
+                    <strong>Physics – S Pass</strong>,
+                    <strong>English – C Pass</strong>.
+                </p>
 
-		
-		<script src="script.js"></script>
-	</body>
+                <p class="fade-in-up">My academic journey has strengthened my analytical and technical abilities. Coursework highlights include 
+                    <strong>Data Structures & Algorithms, Databases, Operating Systems, Software Engineering, and Web Technologies</strong>, 
+                    providing me with solid knowledge in foundational and system-level computing concepts.</p>
+
+                <p class="fade-in-up">I am passionate about continuous learning and improving my skills in software development. I enjoy exploring 
+                    new tools, technologies, and concepts while constantly working on personal and academic projects to grow both 
+                    technically and professionally.</p>
+
+                <h3 class="fade-in-up" style="margin-top: 2rem;">Language Proficiency</h3>
+                <ul class="language-list fade-in-up">
+                    <li><strong>Sinhala</strong> – Fluent</li>
+                    <li><strong>English</strong> – Professional Working Proficiency</li>
+                    <li><strong>German</strong> – Basic</li>
+                </ul>
+
+                <h3 class="fade-in-up" style="margin-top: 2rem;">Extra-Curricular Activities</h3>
+                <p class="fade-in-up">In 2019, I participated in <strong>ROBOFEST</strong>, where I built a Robot Car as part of the competition. 
+                    This experience enhanced my creativity, teamwork, practical robotics skills, and passion for engineering.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title slide-in-left">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card fade-in-up">
+                    <img src="staffhome.png" alt="Staff Management System" class="project-thumb">
+                    <div class="card-body">
+                        <h3>Staff Management System</h3>
+                        <p class="project-desc">A mobile app for task management with offline support. Built core features and synchronized with a backend when online.</p>
+                        <p class="project-tech">Java · MySQL · Servlet · Tomcat · MVC</p>
+                        <div class="project-links">
+                            <a href="https://github.com/KalpaOfficial/Online-Staff-Management-System" class="icon-link" target="_blank">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="https://github.com/KalpaOfficial/Online-Staff-Management-System" class="icon-link live" target="_blank">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card fade-in-up">
+                    <img src="sathvilla.jpeg" alt="Ayurveda Hotel Management System" class="project-thumb">
+                    <div class="card-body">
+                        <h3>Ayurveda Hotel Management System</h3>
+                        <p class="project-desc">A lightweight dashboard and analytics tool to track performance metrics. I worked on front-end visualizations and API integration.</p>
+                        <p class="project-tech">React · Node.js · Express · MongoDB</p>
+                        <div class="project-links">
+                            <a href="https://github.com/KalpaOfficial/Ayurveda-Hotel-Management-System" class="icon-link" target="_blank">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="https://github.com/KalpaOfficial/Ayurveda-Hotel-Management-System" class="icon-link live" target="_blank">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card fade-in-up">
+                    <img src="habitTracker.png" alt="Habit Tracker Mobile Application" class="project-thumb">
+                    <div class="card-body">
+                        <h3>Habit Tracker Mobile Application</h3>
+                        <p class="project-desc">An Android application to help users maintain and improve their daily personal wellness routines.</p>
+                        <p class="project-tech">Kotlin · Java · Android Studio</p>
+                        <div class="project-links">
+                            <a href="https://github.com/KalpaOfficial/Habit-tracker" class="icon-link" target="_blank">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="https://github.com/KalpaOfficial/Habit-tracker" class="icon-link live" target="_blank">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card fade-in-up">
+                    <img src="coffee.png" alt="Coffee Shop Mobile Application" class="project-thumb">
+                    <div class="card-body">
+                        <h3>Coffee Shop Mobile Application</h3>
+                        <p class="project-desc">A restaurant mobile app with fully designed frontend—menu, item details, cart, and restaurant info.</p>
+                        <p class="project-tech">Kotlin · Java · Android Studio</p>
+                        <div class="project-links">
+                            <a href="https://github.com/KalpaOfficial/Nature-Cup-Mobile-Application-" class="icon-link" target="_blank">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="https://github.com/KalpaOfficial/Nature-Cup-Mobile-Application-" class="icon-link live" target="_blank">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title slide-in-left">Skills</h2>
+            <p class="fade-in-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                I have experience across front-end and back-end development, databases, and common developer tools. Below is a concise summary:
+            </p>
+            <div class="skills-grid">
+                <div class="skill-category fade-in-up">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>C</li>
+                        <li>C++</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in-up">
+                    <h3>Web Development</h3>
+                    <ul class="skill-list">
+                        <li>HTML5</li>
+                        <li>CSS</li>
+                        <li>React</li>
+                        <li>Bootstrap</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in-up">
+                    <h3>Back-end & Databases</h3>
+                    <ul class="skill-list">
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in-up">
+                    <h3>Tools & Concepts</h3>
+                    <ul class="skill-list">
+                        <li>Git</li>
+                        <li>VS Code</li>
+                        <li>Linux</li>
+                        <li>Data Structures</li>
+                        <li>REST APIs</li>
+                        <li>MVC Architecture</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title slide-in-left">Contact</h2>
+            <p class="fade-in-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                If you'd like to get in touch for internships or collaborations, feel free to use the options below.
+            </p>
+            <div class="contact-grid">
+                <!-- Left Side -->
+                <div class="contact-left fade-in-up">
+                    <p class="intro" style="font-size: 1.1rem; margin-bottom: 2rem;">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                    </p>
+                    <div class="contact-list">
+                        <div class="contact-row fade-in-up">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span>kalpade12@gmail.com</span>
+                        </div>
+                        <div class="contact-row fade-in-up">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span>+94 (77) 935 5912</span>
+                        </div>
+                        <div class="contact-row fade-in-up">
+                            <div class="icon-circle">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span>Colombo, Sri Lanka</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side -->
+                <div class="contact-right fade-in-up">
+                    <!-- CV Download -->
+                    <div class="cv-box" style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1rem;">My Resume</h3>
+                        <a href="#" class="btn primary" style="width: 100%; justify-content: center;">
+                            <i class="fa-solid fa-file-arrow-down"></i> Download CV
+                        </a>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-section">
+                        <h3 style="margin-bottom: 1rem;">Connect With Me</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/KalpaOfficial" class="social-card" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kalpa-de-silva-73b9631a1/" class="social-card" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://wa.me/94779355912" class="social-card" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="mailto:kalpade12@gmail.com" class="social-card">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Kalpa De Silva</h3>
+                    <p>Software Engineering Student</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/KalpaOfficial" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/kalpa-de-silva-73b9631a1/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:kalpade12@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Kalpa De Silva. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav" id="quickNav">
+        <a href="#home" class="quick-nav-btn">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const navToggle = document.querySelector('.nav-toggle');
+        const siteNav = document.getElementById('site-nav');
+        const quickNav = document.getElementById('quickNav');
+        
+        // Theme Toggle
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', theme);
+        }
+        
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+        
+        // Mobile Navigation Toggle
+        navToggle.addEventListener('click', () => {
+            const isOpen = siteNav.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            navToggle.querySelector('.hamburger').style.transform = isOpen ? 'rotate(45deg)' : 'none';
+        });
+        
+        // Close mobile nav when clicking a link
+        document.querySelectorAll('.site-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                siteNav.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.querySelector('.hamburger').style.transform = 'none';
+            });
+        });
+        
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, entry.target.dataset.delay || 0);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in-up, .slide-in-left').forEach((el, index) => {
+            el.dataset.delay = index * 100;
+            observer.observe(el);
+        });
+        
+        // Show/Hide Quick Navigation
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                quickNav.classList.add('active');
+            } else {
+                quickNav.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Particles Background Effect
+        function createParticles() {
+            const particles = document.querySelector('.particles');
+            if (!particles) return;
+            
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 4 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = 'var(--primary-color)';
+                particle.style.borderRadius = '50%';
+                particle.style.opacity = Math.random() * 0.3 + 0.1;
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.left = Math.random() * 100 + 'vw';
+                
+                // Animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s infinite ease-in-out`;
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                
+                particles.appendChild(particle);
+            }
+            
+            // Add animation keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% { transform: translateY(0) translateX(0); }
+                    25% { transform: translateY(-20px) translateX(10px); }
+                    50% { transform: translateY(-10px) translateX(-10px); }
+                    75% { transform: translateY(-30px) translateX(-5px); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+    </script>
+</body>
 </html>
