@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Kalpa De Silva Portfolio</title>
-    <meta name="description" content="Portfolio of an undergraduate student at SLIIT showcasing projects, skills and contact information." />
-    
+    <meta name="description"
+        content="Portfolio of an undergraduate student at SLIIT showcasing projects, skills and contact information." />
+
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <style>
         /* CSS Variables */
         :root {
@@ -64,7 +68,11 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             line-height: 1.2;
@@ -119,7 +127,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
-			
+
         }
 
         .site-nav a {
@@ -178,7 +186,7 @@
             cursor: pointer;
             padding: 0.5rem;
             z-index: 1001;
-			height: 30px;
+            height: 30px;
         }
 
         .hamburger {
@@ -215,7 +223,7 @@
             align-items: center;
             padding-top: 8rem;
             position: relative;
-			margin-top: 70px;
+            margin-top: 70px;
         }
 
         .hero-content {
@@ -224,11 +232,12 @@
             gap: 4rem;
             align-items: center;
         }
-		.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .hero-text h1 {
             font-size: clamp(2rem, 5vw, 3.5rem);
@@ -275,31 +284,31 @@
         }
 
         /* Hero Image */
-       .image-container {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    padding: 8px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-    box-shadow: var(--shadow-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .image-container {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.profile-photo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--bg-color);
-    transition: var(--transition);
-}
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-color);
+            transition: var(--transition);
+        }
 
-.profile-photo:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
+        .profile-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
 
         /* Buttons */
         .hero-ctas {
@@ -379,12 +388,14 @@
             margin-bottom: 1.5rem;
         }
 
-        .language-list, .activities-list {
+        .language-list,
+        .activities-list {
             list-style: none;
             margin: 1.5rem 0;
         }
 
-        .language-list li, .activities-list li {
+        .language-list li,
+        .activities-list li {
             margin-bottom: 0.5rem;
             padding-left: 1.5rem;
             position: relative;
@@ -516,7 +527,8 @@
             margin-top: 2rem;
         }
 
-        .contact-left, .contact-right {
+        .contact-left,
+        .contact-right {
             background: var(--card-bg);
             padding: 2rem;
             border-radius: var(--radius);
@@ -629,7 +641,8 @@
         }
 
         /* Animation Classes */
-        .fade-in-up, .slide-in-left {
+        .fade-in-up,
+        .slide-in-left {
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease-out;
@@ -643,36 +656,38 @@
             opacity: 1 !important;
             transform: translate(0) !important;
         }
-@media (max-width: 1024px) {
-    .image-container {
-		align-items: center;
-		justify-content: center;
-        width: 280px;
-        height: 280px;
-    }
-}
 
-/* For mobile */
-@media (max-width: 768px) {
-    .image-container {
-        width: 240px;
-        height: 240px;
-    }
-}
+        @media (max-width: 1024px) {
+            .image-container {
+                align-items: center;
+                justify-content: center;
+                width: 280px;
+                height: 280px;
+            }
+        }
 
-/* For small mobile */
-@media (max-width: 480px) {
-    .image-container {
-        width: 200px;
-        height: 200px;
-    }
-}
+        /* For mobile */
+        @media (max-width: 768px) {
+            .image-container {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+        /* For small mobile */
+        @media (max-width: 480px) {
+            .image-container {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-content {
                 gap: 3rem;
             }
-			       
+
             .image-placeholder {
                 width: 250px;
                 height: 250px;
@@ -684,15 +699,15 @@
             .container {
                 padding: 0 1rem;
             }
-            
+
             section {
                 padding: 3rem 0;
             }
-            
+
             .nav-toggle {
                 display: block;
             }
-            
+
             .site-nav {
                 position: fixed;
                 top: 70px;
@@ -706,61 +721,61 @@
                 visibility: hidden;
                 transition: var(--transition);
             }
-            
+
             .site-nav.active {
                 transform: translateY(0);
                 opacity: 1;
                 visibility: visible;
             }
-            
+
             .site-nav ul {
                 flex-direction: column;
                 gap: 0;
             }
-            
+
             .site-nav li {
                 width: 100%;
             }
-            
+
             .site-nav a {
                 display: block;
                 padding: 1rem;
                 border-bottom: 1px solid var(--border-color);
             }
-            
+
             .hero {
                 padding-top: 6rem;
             }
-            
+
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             .hero-text {
                 text-align: center;
             }
-            
+
             .hero-ctas {
                 justify-content: center;
                 flex-wrap: wrap;
             }
-            
+
             .image-placeholder {
                 width: 200px;
                 height: 200px;
                 font-size: 5rem;
                 margin: 0 auto;
             }
-            
+
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .footer-content {
                 flex-direction: column;
                 gap: 1.5rem;
@@ -772,21 +787,21 @@
             .hero-text h1 {
                 font-size: 2rem;
             }
-            
+
             .lead {
                 font-size: 1.125rem;
             }
-            
+
             .hero-ctas {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .btn {
                 width: 100%;
                 justify-content: center;
             }
-            
+
             .social-links {
                 grid-template-columns: 1fr;
             }
@@ -825,6 +840,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Particles Background -->
     <div class="particles"></div>
@@ -863,9 +879,12 @@
                     <p class="lead fade-in-up">Undergraduate — BSc (Hons) in Information Technology
                         Specialising in Software Engineering (SLIIT).</p>
                     <div class="hero-description fade-in-up">
-                        <p>I am a motivated software developer with hands-on experience in designing and developing web and mobile applications. I focus on clean 
-                            code, practical problem-solving, and building real-world systems such as booking platforms, management systems, and mobile apps.</p>
-                        <p>My portfolio highlights the skills I've gained in front-end, back-end, and database development, as well as my eagerness to continuously learn and improve.</p>
+                        <p>I am a motivated software developer with hands-on experience in designing and developing web
+                            and mobile applications. I focus on clean
+                            code, practical problem-solving, and building real-world systems such as booking platforms,
+                            management systems, and mobile apps.</p>
+                        <p>My portfolio highlights the skills I've gained in front-end, back-end, and database
+                            development, as well as my eagerness to continuously learn and improve.</p>
                     </div>
                     <div class="hero-info fade-in-up">
                         <div class="availability">
@@ -882,11 +901,11 @@
                         </a>
                     </div>
                 </div>
-               <div class="hero-image fade-in-up">
-    <div class="image-container">
-        <img src="kalpa.jpeg" alt="Kalpa De Silva - Software Engineering Student" class="profile-photo">
-    </div>
-</div>
+                <div class="hero-image fade-in-up">
+                    <div class="image-container">
+                        <img src="kalpa.jpeg" alt="Kalpa De Silva - Software Engineering Student" class="profile-photo">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -896,11 +915,14 @@
         <div class="container">
             <h2 class="section-title slide-in-left">About Me</h2>
             <div class="about-content">
-                <p class="fade-in-up">I am a dedicated and motivated software engineering student with a strong academic background and a GPA of 3.1. 
-                    My interest in technology began early and has grown into a passion for problem-solving, logical thinking, 
+                <p class="fade-in-up">I am a dedicated and motivated software engineering student with a strong academic
+                    background and a GPA of 3.1.
+                    My interest in technology began early and has grown into a passion for problem-solving, logical
+                    thinking,
                     and building meaningful digital solutions.</p>
 
-                <p class="fade-in-up">I completed my GCE Advanced Level examination in 2020 at Kalutara Vidyalaya (National School), 
+                <p class="fade-in-up">I completed my GCE Advanced Level examination in 2020 at Kalutara Vidyalaya
+                    (National School),
                     following the Combined Mathematics stream. My subject results include:
                     <br><strong>ICT – C Pass</strong>,
                     <strong>Combined Mathematics – S Pass</strong>,
@@ -908,12 +930,17 @@
                     <strong>English – C Pass</strong>.
                 </p>
 
-                <p class="fade-in-up">My academic journey has strengthened my analytical and technical abilities. Coursework highlights include 
-                    <strong>Data Structures & Algorithms, Databases, Operating Systems, Software Engineering, and Web Technologies</strong>, 
-                    providing me with solid knowledge in foundational and system-level computing concepts.</p>
+                <p class="fade-in-up">My academic journey has strengthened my analytical and technical abilities.
+                    Coursework highlights include
+                    <strong>Data Structures & Algorithms, Databases, Operating Systems, Software Engineering, and Web
+                        Technologies</strong>,
+                    providing me with solid knowledge in foundational and system-level computing concepts.
+                </p>
 
-                <p class="fade-in-up">I am passionate about continuous learning and improving my skills in software development. I enjoy exploring 
-                    new tools, technologies, and concepts while constantly working on personal and academic projects to grow both 
+                <p class="fade-in-up">I am passionate about continuous learning and improving my skills in software
+                    development. I enjoy exploring
+                    new tools, technologies, and concepts while constantly working on personal and academic projects to
+                    grow both
                     technically and professionally.</p>
 
                 <h3 class="fade-in-up" style="margin-top: 2rem;">Language Proficiency</h3>
@@ -924,8 +951,10 @@
                 </ul>
 
                 <h3 class="fade-in-up" style="margin-top: 2rem;">Extra-Curricular Activities</h3>
-                <p class="fade-in-up">In 2019, I participated in <strong>ROBOFEST</strong>, where I built a Robot Car as part of the competition. 
-                    This experience enhanced my creativity, teamwork, practical robotics skills, and passion for engineering.</p>
+                <p class="fade-in-up">In 2019, I participated in <strong>ROBOFEST</strong>, where I built a Robot Car as
+                    part of the competition.
+                    This experience enhanced my creativity, teamwork, practical robotics skills, and passion for
+                    engineering.</p>
             </div>
         </div>
     </section>
@@ -940,13 +969,16 @@
                     <img src="staffhome.png" alt="Staff Management System" class="project-thumb">
                     <div class="card-body">
                         <h3>Staff Management System</h3>
-                        <p class="project-desc">A mobile app for task management with offline support. Built core features and synchronized with a backend when online.</p>
+                        <p class="project-desc">A mobile app for task management with offline support. Built core
+                            features and synchronized with a backend when online.</p>
                         <p class="project-tech">Java · MySQL · Servlet · Tomcat · MVC</p>
                         <div class="project-links">
-                            <a href="https://github.com/KalpaOfficial/Online-Staff-Management-System" class="icon-link" target="_blank">
+                            <a href="https://github.com/KalpaOfficial/Online-Staff-Management-System" class="icon-link"
+                                target="_blank">
                                 <i class="fa-brands fa-github"></i> Code
                             </a>
-                            <a href="https://github.com/KalpaOfficial/Online-Staff-Management-System" class="icon-link live" target="_blank">
+                            <a href="https://github.com/KalpaOfficial/Online-Staff-Management-System"
+                                class="icon-link live" target="_blank">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
                             </a>
                         </div>
@@ -958,13 +990,16 @@
                     <img src="sathvilla.jpeg" alt="Ayurveda Hotel Management System" class="project-thumb">
                     <div class="card-body">
                         <h3>Ayurveda Hotel Management System</h3>
-                        <p class="project-desc">A lightweight dashboard and analytics tool to track performance metrics. I worked on front-end visualizations and API integration.</p>
+                        <p class="project-desc">A lightweight dashboard and analytics tool to track performance metrics.
+                            I worked on front-end visualizations and API integration.</p>
                         <p class="project-tech">React · Node.js · Express · MongoDB</p>
                         <div class="project-links">
-                            <a href="https://github.com/KalpaOfficial/Ayurveda-Hotel-Management-System" class="icon-link" target="_blank">
+                            <a href="https://github.com/KalpaOfficial/Ayurveda-Hotel-Management-System"
+                                class="icon-link" target="_blank">
                                 <i class="fa-brands fa-github"></i> Code
                             </a>
-                            <a href="https://github.com/KalpaOfficial/Ayurveda-Hotel-Management-System" class="icon-link live" target="_blank">
+                            <a href="https://github.com/KalpaOfficial/Ayurveda-Hotel-Management-System"
+                                class="icon-link live" target="_blank">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
                             </a>
                         </div>
@@ -976,13 +1011,15 @@
                     <img src="habitTracker.png" alt="Habit Tracker Mobile Application" class="project-thumb">
                     <div class="card-body">
                         <h3>Habit Tracker Mobile Application</h3>
-                        <p class="project-desc">An Android application to help users maintain and improve their daily personal wellness routines.</p>
+                        <p class="project-desc">An Android application to help users maintain and improve their daily
+                            personal wellness routines.</p>
                         <p class="project-tech">Kotlin · Java · Android Studio</p>
                         <div class="project-links">
                             <a href="https://github.com/KalpaOfficial/Habit-tracker" class="icon-link" target="_blank">
                                 <i class="fa-brands fa-github"></i> Code
                             </a>
-                            <a href="https://github.com/KalpaOfficial/Habit-tracker" class="icon-link live" target="_blank">
+                            <a href="https://github.com/KalpaOfficial/Habit-tracker" class="icon-link live"
+                                target="_blank">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
                             </a>
                         </div>
@@ -994,13 +1031,36 @@
                     <img src="coffee.png" alt="Coffee Shop Mobile Application" class="project-thumb">
                     <div class="card-body">
                         <h3>Coffee Shop Mobile Application</h3>
-                        <p class="project-desc">A restaurant mobile app with fully designed frontend—menu, item details, cart, and restaurant info.</p>
+                        <p class="project-desc">A restaurant mobile app with fully designed frontend—menu, item details,
+                            cart, and restaurant info.</p>
                         <p class="project-tech">Kotlin · Java · Android Studio</p>
                         <div class="project-links">
-                            <a href="https://github.com/KalpaOfficial/Nature-Cup-Mobile-Application-" class="icon-link" target="_blank">
+                            <a href="https://github.com/KalpaOfficial/Nature-Cup-Mobile-Application-" class="icon-link"
+                                target="_blank">
                                 <i class="fa-brands fa-github"></i> Code
                             </a>
-                            <a href="https://github.com/KalpaOfficial/Nature-Cup-Mobile-Application-" class="icon-link live" target="_blank">
+                            <a href="https://github.com/KalpaOfficial/Nature-Cup-Mobile-Application-"
+                                class="icon-link live" target="_blank">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card fade-in-up">
+                    <img src="tour.jpeg" alt="Tour Guide n" class="project-thumb">
+                    <div class="card-body">
+                        <h3>Tour Guide Mobile Web Application</h3>
+                        <p class="project-desc">A modern tour guide website designed to help travelers explore
+                            destinations easily. Users can discover attractions, book tours, and plan unforgettable
+                            travel experiences through a simple and user-friendly interface..</p>
+                        <p class="project-tech">React · Node.js · Express · MongoDB</p>
+                        <div class="project-links">
+                            <a href=# class="icon-link" target="_blank">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href=# class="icon-link live" target="_blank">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
                             </a>
                         </div>
@@ -1015,7 +1075,8 @@
         <div class="container">
             <h2 class="section-title slide-in-left">Skills</h2>
             <p class="fade-in-up" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-                I have experience across front-end and back-end development, databases, and common developer tools. Below is a concise summary:
+                I have experience across front-end and back-end development, databases, and common developer tools.
+                Below is a concise summary:
             </p>
             <div class="skills-grid">
                 <div class="skill-category fade-in-up">
@@ -1075,7 +1136,8 @@
                 <!-- Left Side -->
                 <div class="contact-left fade-in-up">
                     <p class="intro" style="font-size: 1.1rem; margin-bottom: 2rem;">
-                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        visions.
                     </p>
                     <div class="contact-list">
                         <div class="contact-row fade-in-up">
@@ -1104,7 +1166,8 @@
                     <!-- CV Download -->
                     <div class="cv-box" style="margin-bottom: 2rem;">
                         <h3 style="margin-bottom: 1rem;">My Resume</h3>
-                        <a href="kalpa_resume.pdf" class="btn primary" style="width: 100%; justify-content: center;">
+                        <a href="kalpa_de_silva_resume.pdf" class="btn primary"
+                            style="width: 100%; justify-content: center;">
                             <i class="fa-solid fa-file-arrow-down"></i> Download CV
                         </a>
                     </div>
@@ -1117,7 +1180,8 @@
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
-                            <a href="https://www.linkedin.com/in/kalpa-de-silva-73b9631a1/" class="social-card" target="_blank">
+                            <a href="https://www.linkedin.com/in/kalpa-de-silva-73b9631a1/" class="social-card"
+                                target="_blank">
                                 <i class="fab fa-linkedin"></i>
                                 <span>LinkedIn</span>
                             </a>
@@ -1145,8 +1209,10 @@
                     <p>Software Engineering Student</p>
                 </div>
                 <div class="footer-social">
-                    <a href="https://github.com/KalpaOfficial" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/kalpa-de-silva-73b9631a1/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/KalpaOfficial" aria-label="GitHub" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/kalpa-de-silva-73b9631a1/" aria-label="LinkedIn"
+                        target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="mailto:kalpade12@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -1168,31 +1234,31 @@
         const navToggle = document.querySelector('.nav-toggle');
         const siteNav = document.getElementById('site-nav');
         const quickNav = document.getElementById('quickNav');
-        
+
         // Theme Toggle
         function applyTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
             themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
             localStorage.setItem('theme', theme);
         }
-        
+
         // Initialize theme
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
-        
+
         themeToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
-        
+
         // Mobile Navigation Toggle
         navToggle.addEventListener('click', () => {
             const isOpen = siteNav.classList.toggle('active');
             navToggle.setAttribute('aria-expanded', isOpen);
             navToggle.querySelector('.hamburger').style.transform = isOpen ? 'rotate(45deg)' : 'none';
         });
-        
+
         // Close mobile nav when clicking a link
         document.querySelectorAll('.site-nav a').forEach(link => {
             link.addEventListener('click', () => {
@@ -1201,13 +1267,13 @@
                 navToggle.querySelector('.hamburger').style.transform = 'none';
             });
         });
-        
+
         // Scroll Animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1217,13 +1283,13 @@
                 }
             });
         }, observerOptions);
-        
+
         // Observe all animated elements
         document.querySelectorAll('.fade-in-up, .slide-in-left').forEach((el, index) => {
             el.dataset.delay = index * 100;
             observer.observe(el);
         });
-        
+
         // Show/Hide Quick Navigation
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
@@ -1232,14 +1298,14 @@
                 quickNav.classList.remove('active');
             }
         });
-        
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -1249,14 +1315,14 @@
                 }
             });
         });
-        
+
         // Particles Background Effect
         function createParticles() {
             const particles = document.querySelector('.particles');
             if (!particles) return;
-            
+
             const particleCount = 50;
-            
+
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.style.position = 'absolute';
@@ -1267,15 +1333,15 @@
                 particle.style.opacity = Math.random() * 0.3 + 0.1;
                 particle.style.top = Math.random() * 100 + 'vh';
                 particle.style.left = Math.random() * 100 + 'vw';
-                
+
                 // Animation
                 const duration = Math.random() * 20 + 10;
                 particle.style.animation = `float ${duration}s infinite ease-in-out`;
                 particle.style.animationDelay = Math.random() * 5 + 's';
-                
+
                 particles.appendChild(particle);
             }
-            
+
             // Add animation keyframes
             const style = document.createElement('style');
             style.textContent = `
@@ -1288,9 +1354,10 @@
             `;
             document.head.appendChild(style);
         }
-        
+
         // Initialize particles when page loads
         window.addEventListener('load', createParticles);
     </script>
 </body>
+
 </html>
